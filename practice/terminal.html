@@ -2,6 +2,11 @@
 <html lang ="en">
 	<head>
 		<title>Hello! This page will be used to teach the basics of Vim.</title>
+<style>
+	body{
+		background-color:blue;
+	}
+</style>
 	</head>
 	<body>
 		<h3>How to open vim</h3>
@@ -26,10 +31,10 @@
 		</ul>
 		<h4>How do I move around?</h4>
 		<pre>To move around, you can use your arrow keys.
-		You can also use the keys, <kbd>h</kbd> to move left, <kbd>j</kbd> To move down, <kbd>k</kbd> to move up, and <kbd>l</kbd> to move right.</pre> 
+You can also use the keys, <kbd>h</kbd> to move left, <kbd>j</kbd> To move down, <kbd>k</kbd> to move up, and <kbd>l</kbd> to move right.</pre> 
 		<h3>The Minimal code</h3>
 		<pre>
-		The minimum code that you need for your file requires multiple things.</pre>
+The minimum code that you need for your file requires multiple things.</pre>
 		<ul>
 			<li>A declaration.</li>
 			<li>Not necessary, but you should have it-A language set</li>
@@ -39,8 +44,16 @@
 			<li>Body text</li>
 			<li>A closing tag for the html</li>
 		</ul>
-		<h3>How do I exit vim></h3>
+		<h3>How do I exit vim</h3>
 		<p>To exit and save changes in vim, type <code>:wq</code>. To exit vim without changes, type <code>:q!</code>. If you didn't make any changes, you can just type <code>:q</code></p>
+		<h3>How do I get this on my website?</h3>
+		<ol>
+			<li>Save and quit vim.</li>
+			<li>Type <code>git add</code> and then the name of your file.</li>
+			<li>Type <code>git commit -m "Type whatever you want to name the change you made here"</code></li>
+			<li>Type <code>git status</code> to make sure everything looks right. If your file is green, then you're good!</li>
+			<li>Type <code>git push</code></li>
+			<li>Check your website in a few minutes. It should show up!</li>
 	</body>
 </html>
 
