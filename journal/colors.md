@@ -1,6 +1,9 @@
 # My Binary image
-2   ![image](../../images/binaryimage)
- ![image](../../images/pixelart)
+
+![image](../../images/binaryimage)
+
+![image](../../images/pixelart)
+
 0000 1010
 0000 1010
 0001 1000
