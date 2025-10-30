@@ -2,7 +2,7 @@
 
 ![image](../images/binaryimage.png)
 
-![image](../images/pixelart.jpeg)
+![image](../images/pixelart.jpg)
 
 0000 1010
 0000 1010
