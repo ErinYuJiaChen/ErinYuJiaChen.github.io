@@ -1,0 +1,20 @@
+table, td, tr, th{
+	border: 1px solid black;
+	border-collapse: collapse;
+	background-color: #8FEBBD;
+}
+body{
+	background-color: #A9F5CE;
+}
+h1{
+	background-color: #A9F5CE;
+}
+#info{
+	background-color: BurlyWood;}
+.highlight{
+	background-color: Chartreuse;
+}
+#zoo{
+	text-decoration: underline;
+	tex t-decoration-style: wavy;
+}
