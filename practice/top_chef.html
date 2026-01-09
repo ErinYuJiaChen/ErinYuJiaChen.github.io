@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+<style>
+body{
+	background-color:gray;
+	.img {
+	width: 100vw;
+	height: 500px;
+	object-fit: cover;
+	display: block;
+	}
+.container {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	background-color: darkgray;
+  padding: 10px;
+}
+.container div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+.container2 { 
+	display: grid;
+	place-items: center;
+	grid-template-columns: auto auto auto;
+	background-color: darkgray;
+	padding: 10px;
+}
+.welcome {
+	color: black;
+	text-align: c;
+	font-size: 3em;
+	font-weight: bold;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	display: block;
+}
+#welcometxt{
+	grid-column-start:2;
+	grid-row-start:1;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div>Dino Museum</div>
+  <div>about us</div>
+  <div>Donate</div>
+</div>
+
+</head>
+	<body>
+		<p></p>
+		<img src="dino.jpg" class="img" alt="A picture of a dino" height="700" width="1400">
+		<hr>
+		<div class="container2">
+			<div class="container2" id="welcometxt">Welcome</div>
+		</div>
+		 <img src="dino2.jpg" class="img" alt="A picture of a dino" he    ight="700" width="1400">
+		  <img src="footer.jpg" class="img" alt="A picture of a dino" he    ight="700" width="1400">
+	</body>
+</html>
