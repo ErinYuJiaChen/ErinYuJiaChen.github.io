@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>parade</title>
+<style>
+canvas{
+	border: 1px Black solid;
+}
+</style>
+	</head>
+	<body>
+		<h1>Parade</h1>
+		<canvas id="myCanvas"
+			width="800"
+			height="800">
+		</canvas>
+			<script>
+const canvas = document
+.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+let x = 1;
+let x2 = 25;
+let x3 = 50;
+let x4 = 25;
+let Vx = 15;
+let Vx2 = 15;
+let Vx3 = 15;
+let Vx4 = 15;
+function parade(){
+	x = x + Vx;
+	x2 = x2 + Vx2;
+	x3 = x3 + Vx3;
+	x4 = x4 + Vx4;
+
+//circle
+ctx.fillStyle = "pink";
+ctx.beginPath();
+ctx.arc(x4,300,20,0, 2*Math.PI);
+ctx.stroke();
+ctx.fill();
+
+//circle
+ctx.fillStyle = "HotPink";
+ctx.beginPath();
+ctx.arc(x3,300,20,0, 2*Math.PI);
+ctx.stroke();
+ctx.fill();
+
+//circle
+ctx.fillStyle = "IndianRed";
+ctx.beginPath();
+ctx.arc(x2,300,20,0, 2*Math.PI);
+ctx.stroke();
+ctx.fill();
+
+//circle
+ctx.fillStyle = "LightCoral";
+ctx.beginPath();
+ctx.arc(x4,300,20,0, 2*Math.PI);
+ctx.stroke();
+ctx.fill();
+
+
+
+
+requestAnimationFrame(parade);
+}
+
+parade();
+
+			</script>
+	</body>
+</html>
