@@ -1,10 +1,6 @@
-let gameActive = true; //this variable is required. 
-              //to stop the game, set it to false.
-let hidAlready = false;
+let gameActive = true;
 let haveKey = false;
 let wokeUp = false;
-
-//Declare your other global variables here
 
 
 //If you need, add any "helper" functions here
@@ -64,10 +60,16 @@ function neighborsHouse() {
 	print("\nNot really... You went in through the front door. You can hear the neighbor sleeping... DOnt wake him!");
     print("\nWhere do you want to go next? Say one of these choices:" +
         "\n\tKitchen" + "\n\tUpstairs" + "\n\tliving room");
-	function processInput(input){
+
+	  function processInput(input){
 	if (input.toLowerCase() === "upstairs") {
 	upstairs();
 	}
+	}
+		function processInput(input){
+			if (input.toLowerCase() === "living room") {
+				livingRoom();
+			}
 		if (input.toLowerCase() === "kitchen") {
 			print("\nYou go to the kitchen and look around.");
 			print("\nTheres some funky stuff. There's exactly 50 loaves of bread, but no toaster!");
@@ -88,10 +90,9 @@ function neighborsHouse() {
 						} else {
 							stayHere();
 						}
+					}waitForInput(processInput);
 					}
-					}
-			}
-			waitForInput(processInput);
+			}waitForInput(processInput);  
 		}
 	}waitForInput(processInput);
 }
@@ -119,23 +120,25 @@ waitForInput(processInput);
 }
 function upstairs(){
 	clear();
-	print("\nYou're upstairs. There's only one room. Say yes to go in, or back to go back." + "\n\tbedroom" + "\n\tback");
+	print("\nYou're upstairs. There's only one room. Bedroom to go in, or back to go back." + "\n\tbedroom" + "\n\tback");
+	function processInput(input){
 	if (input.toLowerCase() === "bedroom") {
 	bedroom();
 	}
 	else if (input.toLowerCase() === "back") {
 	neighborsHouse();
 	}
+}
 waitForInput(processInput);
 }
 
 function bedroom(){
-if (haveKey ===true) {
+if (haveKey === true) {
 	begin();
 }
 else{
-print("\nYou're in the bedroom. nothing much to say here. There's a safe that looks mysterious...")
-	print("\nSay back to go back.")
+print("\nYou're in the bedroom. nothing much to say here. There's a safe that looks mysterious...");
+print("\nSay back to go back.");
 	if (input.toLowerCase() === "back") {
 upstairs();
 	}
