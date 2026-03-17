@@ -9,26 +9,53 @@ let hidAlready = false;
 
 
 //Make one function for each location
-function locationA() {
-    clear();
-    print("\nYou are outside!");
-    print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\te");
-    
-    function processInput(input){
-        if (input.toLowerCase() === "locationb") {
-            locationB();
-        } else {
-            stayHere();
-            waitThenCall(locationA);
-        }
-    }
-    waitForInput(processInput);
+function lose(){
+	clear();
+	start();
 }
 
-function locationB() {
+function outside() {
     clear();
-    print("\nYou are in location B!");
+    print("\nYou had just came outside, because your bathtub had exploded... " + "Why? You put your toaster in it... " + " You need a new toaster. Let's see if the neighbor has one.");
+    print("\nWhere do you want to go next? Say one of these choices:" +
+        "\n\tThe street" + "\n\tNeighbors House");
+    
+    function processInput(input){
+        if (input.toLowerCase() === "The street") {
+		print("\nYou decide to walk down the street for some reason, " + "even though YOU WERE SUPPOSED TO GO TO THE NEIGHBORS HOUSE. " + "Anyway, you trip and fall on a stick and *unfortunately* pass away :3.");
+		print("\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣄⠀
+⠀⠀⠀⣾⣿⣷⡀⠀⠀⠀⠀⠸⣿⣿⣿⣄⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⣿⡿⠀
+⠀⠀⠀⠻⣿⣿⣿⣦⡀⠀⠀⠀⠹⣿⣿⣿⣆⠀⠀⢀⣾⣿⣿⣿⠿⠛⠋⠁⠀⠀
+⠀⠀⠀⠀⠙⢿⣿⣿⣿⣆⠀⠀⠀⠙⣿⣿⣿⣧⠀⣾⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⠀⠀⣠⣴⣿⣿⣿⣿⣷⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⣴⣾⣿⣷⣦⡹⣿⣿⣿⣿⣿⠟⠉⠀⠀⠀⢀⣤⣾⣿⣆⠀⠀⠀⠀⠀⠀⠀
+⠀⣾⣿⣿⣿⣿⣿⣷⠘⣿⣿⣿⣿⣷⣦⣄⣠⣾⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀
+⠀⠻⣿⣿⣿⣿⣿⠏⠀⠀⠉⠛⠿⢿⣿⣿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+
+	print("\nRestart?" + " yes or no");
+
+		function processInput(input){
+			if (input.toLowerCase() === "yes" {
+				lose();
+			} else if (input.toLowerCase() === "no") {
+				print("Too bad.");
+				lose();
+			}
+		}
+		waitForInput(processInput);
+	}
+
+function neighborsHouse() {
+    clear();
+    print("\nYou snuck into the neighbors house.");
+	print("\nNot really... You went through the front door.");
     print("\nWhere do you want to go next? Say one of these choices:" +
         "\n\tlocationA");
     
