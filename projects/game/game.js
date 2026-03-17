@@ -15,6 +15,31 @@ function lose(){
 	start();
 }
 
+function begin(){
+	clear();
+	if (haveKey === true){
+		print("\nYou go into the bedroom, where there's a secret safe...");
+		print("\nLuckily, you have a random key from the kitchen!");
+		print("\nYou use it to unlock the safe, containing the magical golden toaster!");
+		print("\nThe neighbor sees you and chases you out, but you manage to escape");
+		print("\nGood job! The end.");
+	} else { 
+		print("\nCough cough, you blew up your bathtub... ");
+		print("\nLuckily you're fine. Although your toaster isnt fine.");
+		print("\nYou remember your neighbor has an awesome golden limited toaster...");
+		print("\nGo steal it! Type outside to go outside.");
+	}
+	function processInput(input){
+		if (input.toLowerCase() === "outside") {
+		outside();				
+		} else {
+			stayHere();
+			waitThenCall(begin);
+		}
+	}
+	waitForInput(processInput);
+}
+
 function outside() {
     clear();
     print("\nYou had just came outside, because your bathtub had exploded... " + " You need a new toaster.");
@@ -23,30 +48,17 @@ function outside() {
 	"\n\tNeighbors House");
     
     function processInput(input){
-        if (input.toLowerCase() === "The street") {
+        if (input.toLowerCase() === "the street") {
 		print("\nYou decide to walk down the street for some reason, " + "even though YOU WERE SUPPOSED TO GO TO THE NEIGHBORS HOUSE. " + "Anyway, you trip and fall on a stick and *unfortunately* pass away :3. " + "Refresh to restart.");
-		print("\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣄⠀
-⠀⠀⠀⣾⣿⣷⡀⠀⠀⠀⠀⠸⣿⣿⣿⣄⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⣿⡿⠀
-⠀⠀⠀⠻⣿⣿⣿⣦⡀⠀⠀⠀⠹⣿⣿⣿⣆⠀⠀⢀⣾⣿⣿⣿⠿⠛⠋⠁⠀⠀
-⠀⠀⠀⠀⠙⢿⣿⣿⣿⣆⠀⠀⠀⠙⣿⣿⣿⣧⠀⣾⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⠀⠀⣠⣴⣿⣿⣿⣿⣷⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⢀⣴⣾⣿⣷⣦⡹⣿⣿⣿⣿⣿⠟⠉⠀⠀⠀⢀⣤⣾⣿⣆⠀⠀⠀⠀⠀⠀⠀
-⠀⣾⣿⣿⣿⣿⣿⣷⠘⣿⣿⣿⣿⣷⣦⣄⣠⣾⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀
-⠀⠻⣿⣿⣿⣿⣿⠏⠀⠀⠉⠛⠿⢿⣿⣿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠈⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-		gameActive=false;
+		outside();
 
 	} else if (input.toLowerCase() === "neighbors house") {
 		neighborsHouse();
 	} else {
 		stayHere();
-		
+	}
+    }
+}		
 
 function neighborsHouse() {
     clear();
@@ -66,52 +78,18 @@ function neighborsHouse() {
 					haveKey = true;
 					clear();
 					print("\nYou have a random key now. You should look for where it goes.");
+					begin();
 				} else {
-			stay();
+			stayHere();
 				}
 			}
-			waitForInput(processInput);
-
-    
-    function processInput(input){
-        if (input.toLowerCase() === "locationa") {
-            locationA();
-        } else {
-            stayHere();
-            waitThenCall(locationB);
-        }
-    }
-    waitForInput(processInput);
-}
-function begin(){
-	clear();
-	if (haveKey === true){
-		print("\nYou go into the bedroom, where there's a secret safe...");
-		print("\nLuckily, you have a random key from the kitchen!");
-		print("\nYou use it to unlock the safe, containing the magical golden toaster!");
-		print("\nThe neighbor sees you and chases you out, but you manage to escape");
-		print("\nGood job! The end.");
-	} else { 
-		print("\nCough cough, you blew up your bathtub... ");
-		print("\nLuckily you're fine. Although your toaster isnt fine.");
-		print("\nYou remember your neighbor has an awesome golden limited toaster...");
-		print("\nGo steal it! Type outside to go outside.");
-	}
-	function processInput(input){
-		if (input.toLowerCase() === "outside") {
-			outside();
-		} else {
-			stayHere();
-			waitThenCall(begin);
 		}
 	}
-	waitForInput(processInput);
 }
 
-//finally, make sure you customize this to tell it what should happen at the
-//very start. For this simple example, any input will bring you
-//to locationA
+
 function start(){
+
     print("\nOne day, you're chilling in your house when you suddenly " + "discover the urge to put your toaster in the bathtub. " + "Kaboom!" + " Type start to continue.");
 	print("\n\n\n");
 	let start = " Start "
