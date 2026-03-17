@@ -65,11 +65,12 @@ function neighborsHouse() {
 	if (input.toLowerCase() === "upstairs") {
 	upstairs();
 	}
-	}
 		function processInput(input){
 			if (input.toLowerCase() === "living room") {
 				livingRoom();
 			}
+		}
+			
 		if (input.toLowerCase() === "kitchen") {
 			print("\nYou go to the kitchen and look around.");
 			print("\nTheres some funky stuff. There's exactly 50 loaves of bread, but no toaster!");
@@ -92,6 +93,7 @@ function neighborsHouse() {
 						}
 					}waitForInput(processInput);
 					}
+		
 			}waitForInput(processInput);  
 		}
 	}waitForInput(processInput);
