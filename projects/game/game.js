@@ -79,11 +79,13 @@ function neighborsHouse() {
 					function processInput(input) {
 						if (input.toLowerCase() === "upstairs") {
 							upstairs();
+						} else if (input.toLowerCase() === "living room") {
+							livingRoom();
+						} else {
+							stayHere();
 						}
 					}
-				} else {
-			stayHere();
-				}
+					}
 			}
 			waitForInput(processInput);
 		}
