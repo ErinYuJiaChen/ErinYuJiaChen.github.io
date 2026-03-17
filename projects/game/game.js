@@ -65,6 +65,9 @@ function neighborsHouse() {
     print("\nWhere do you want to go next? Say one of these choices:" +
         "\n\tKitchen" + "\n\tUpstairs" + "\n\tliving room");
 	function processInput(input){
+	if (input.toLowerCase() === "upstairs") {
+	upstairs();
+	}
 		if (input.toLowerCase() === "kitchen") {
 			print("\nYou go to the kitchen and look around.");
 			print("\nTheres some funky stuff. There's exactly 50 loaves of bread, but no toaster!");
@@ -94,30 +97,53 @@ function neighborsHouse() {
 }
 function livingRoom(){
 if (haveKey === true){
-	print("\nYou look around. There's a bunch of boxes everywhere like before. PooPoo! The neighbor is sleeping on the couch and woke up! Run!")
+	print("\nYou look around. There's a bunch of boxes everywhere like before. PooPoo! The neighbor is sleeping on the couch and woke up! Run!");
 		wokeUp = true;
 		print("\nRun Upstairs!" + "\n\tupstairs");
 		if (input.toLowerCase() === "upstairs") {
 			upstairs();
-		} waitForInput(processInput);
-}
+		}
+} 
 else if (wokeUp = true){
-	print("\nHe caught you because you were a dummy. game over.")
+	print("\nHe caught you because you were a dummy. game over.");
 	waitThenCall(lose);
-else if (havekey === false || wokeUp = false){
+} else {
 	print("\nYou're in the living room. Nobody's here.");
 	print("\nThere's a bunch of boxes, and a moldy pizza...");
 	print("\nSay back to go back");
 	if (input.toLowerCase() === "back") {
-		neighborsHouse();
+	neighborsHouse();
+	}
 }
 waitForInput(processInput);
 }
-}
 function upstairs(){
+	clear();
+	print("\nYou're upstairs. There's only one room. Say yes to go in, or back to go back." + "\n\tbedroom" + "\n\tback");
+	if (input.toLowerCase() === "bedroom") {
+	bedroom();
+	}
+	else if (input.toLowerCase() === "back") {
+	neighborsHouse();
+	}
+waitForInput(processInput);
 }
 
-
+function bedroom(){
+if (haveKey ===true) {
+	begin();
+}
+else{
+print("\nYou're in the bedroom. nothing much to say here. There's a safe that looks mysterious...")
+	print("\nSay back to go back.")
+	if (input.toLowerCase() === "back") {
+upstairs();
+	}
+	else {
+	stayHere();
+	}
+}
+}
 function start(){
 
     print("\nOne day, you're chilling in your house when you suddenly " + "discover the urge to put your toaster in the bathtub. " + "Kaboom!" + " Type start to continue.");
