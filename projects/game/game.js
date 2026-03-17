@@ -1,6 +1,7 @@
 let gameActive = true; //this variable is required. 
               //to stop the game, set it to false.
 let hidAlready = false;
+let haveKey = false;
 
 //Declare your other global variables here
 
@@ -57,7 +58,25 @@ function neighborsHouse() {
     print("\nYou snuck into the neighbors house.");
 	print("\nNot really... You went through the front door.");
     print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\tlocationA");
+        "\n\tKitchen" + "\n\tUpstairs" + "\n\tliving room");
+	function processInput(input){
+		if (input.toLowerCase() === "kitchen") {
+			print("\nYou go to the kitchen and look around.");
+			print("\nTheres some funky stuff. There's exactly 50 loaves of bread, but no toaster!");
+			print("\nYou end up finding a key schmack on the counter.");
+			print("\nTake it? Yes or no.");
+
+			function processInput(input) {
+				if (input.toLowerCase() === "yes") {
+					haveKey = true;
+					clear();
+					print("\nYou have a random key now. You should look for where it goes.");
+				} else {
+			stay();
+				}
+			}
+			waitForInput(processInput);
+
     
     function processInput(input){
         if (input.toLowerCase() === "locationa") {
