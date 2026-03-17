@@ -8,7 +8,6 @@ This game's objective is to go into the neighbors house and steal their toaster.
 
 ```mermaid
 graph TD;
-    Your house(((Your house)))-->Outside;
     Outside-->Your neighbors house;
     Outside-->The Park;
     The park-->Public bathroom;
@@ -22,7 +21,7 @@ graph TD;
     Bedroom-->Hide under bed
 ```
 
-The player starts in their house, and then is directed outside.
+The player starts outside.
 They will eventually go to their neighbors house to steal their toaster, because the player's toaster exploded.
 
 ## Story
