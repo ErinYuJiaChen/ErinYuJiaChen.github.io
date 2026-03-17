@@ -44,26 +44,23 @@ function outside() {
     clear();
     print("\nYou had just came outside, because your bathtub had exploded... " + " You need a new toaster.");
     print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\tThe street" + 
-	"\n\tNeighbors House");
-    
-    function processInput(input){
-        if (input.toLowerCase() === "the street") {
+        "\n\tstreet" + 
+	"\n\tneighbors"); 
+	function processInput(input){
+        if (input.toLowerCase() === "street") {
 		print("\nYou decide to walk down the street for some reason, " + "even though YOU WERE SUPPOSED TO GO TO THE NEIGHBORS HOUSE. " + "Anyway, you trip and fall on a stick and *unfortunately* pass away :3. " + "Refresh to restart.");
-		outside();
 
-	} else if (input.toLowerCase() === "neighbors house") {
+	} else if (input.toLowerCase() === "neighbors") {
 		neighborsHouse();
-	} else {
-		stayHere();
 	}
     }
+	waitForInput(processInput);
 }		
 
 function neighborsHouse() {
     clear();
     print("\nYou snuck into the neighbors house.");
-	print("\nNot really... You went through the front door.");
+	print("\nNot really... You went in through the front door. You can hear the neighbor sleeping... DOnt wake him!");
     print("\nWhere do you want to go next? Say one of these choices:" +
         "\n\tKitchen" + "\n\tUpstairs" + "\n\tliving room");
 	function processInput(input){
@@ -78,13 +75,19 @@ function neighborsHouse() {
 					haveKey = true;
 					clear();
 					print("\nYou have a random key now. You should look for where it goes.");
-					begin();
+					print("\nWhere will you use this key?" + "\n\tupstairs" + "\n\tLiving room");
+					function processInput(input) {
+						if (input.toLowerCase() === "upstairs") {
+							upstairs();
+						}
+					}
 				} else {
 			stayHere();
 				}
 			}
+			waitForInput(processInput);
 		}
-	}
+	}waitForInput(processInput);
 }
 
 
