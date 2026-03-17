@@ -2,6 +2,7 @@ let gameActive = true; //this variable is required.
               //to stop the game, set it to false.
 let hidAlready = false;
 let haveKey = false;
+let wokeUp = false;
 
 //Declare your other global variables here
 
@@ -48,8 +49,8 @@ function outside() {
 	"\n\tneighbors"); 
 	function processInput(input){
         if (input.toLowerCase() === "street") {
-		print("\nYou decide to walk down the street for some reason, " + "even though YOU WERE SUPPOSED TO GO TO THE NEIGHBORS HOUSE. " + "Anyway, you trip and fall on a stick and *unfortunately* pass away :3. " + "Refresh to restart.");
-
+		print("\nYou decide to walk down the street for some reason, " + "even though YOU WERE SUPPOSED TO GO TO THE NEIGHBORS HOUSE. " + "Anyway, you trip and fall on a stick and *unfortunately* pass away :3.");
+waitThenCall(lose);
 	} else if (input.toLowerCase() === "neighbors") {
 		neighborsHouse();
 	}
@@ -90,6 +91,30 @@ function neighborsHouse() {
 			waitForInput(processInput);
 		}
 	}waitForInput(processInput);
+}
+function livingRoom(){
+if (haveKey === true){
+	print("\nYou look around. There's a bunch of boxes everywhere like before. PooPoo! The neighbor is sleeping on the couch and woke up! Run!")
+		wokeUp = true;
+		print("\nRun Upstairs!" + "\n\tupstairs");
+		if (input.toLowerCase() === "upstairs") {
+			upstairs();
+		} waitForInput(processInput);
+}
+else if (wokeUp = true){
+	print("\nHe caught you because you were a dummy. game over.")
+	waitThenCall(lose);
+else if (havekey === false || wokeUp = false){
+	print("\nYou're in the living room. Nobody's here.");
+	print("\nThere's a bunch of boxes, and a moldy pizza...");
+	print("\nSay back to go back");
+	if (input.toLowerCase() === "back") {
+		neighborsHouse();
+}
+waitForInput(processInput);
+}
+}
+function upstairs(){
 }
 
 
