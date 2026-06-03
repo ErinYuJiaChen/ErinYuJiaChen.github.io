@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 20px;
-    background-color: lightpink;
+    background-color: LightBlue;
     font-family: 'Courier New', monospace;
     color: hotpink;
     height: 100vh;
@@ -13,8 +13,8 @@ h1{
 }
 
 .location{
-    background-color:lightpink;
-    color: lightpink;
+    background-color:LightBlue;
+    color: LightCyan;
     border-radius:5px;
 }
 
@@ -24,9 +24,9 @@ h1{
     flex-direction: column;
     max-width: 80%;
     margin: 0 auto;
-    border: 2px solid hotpink;
+    border: 2px solid Blue;
     padding: 20px;
-    background-color: lightpink;
+    background-color: LightBlue;
     overflow: hidden;
 }
 
@@ -48,7 +48,7 @@ h1{
 }
 
 .prompt {
-    color: hotpink;
+    color: Blue;
     margin-right: 10px;
     font-weight: bold;
 }
@@ -57,14 +57,14 @@ h1{
     flex: 1;
     background: transparent;
     border: none;
-    color: hotpink;
+    color: blue;
     font-family: 'Courier New', monospace;
     font-size: 16px;
     outline: none;
 }
 
 #user-input::placeholder {
-    color: hotpink;
+    color: LightBlue;
 }
 
 .ascii-art {

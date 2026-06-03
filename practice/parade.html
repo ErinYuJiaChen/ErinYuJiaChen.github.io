@@ -19,18 +19,20 @@ const canvas = document
 .getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 let x = 1;
-let x2 = 25;
-let x3 = 50;
-let x4 = 25;
-let Vx = 15;
-let Vx2 = 15;
-let Vx3 = 15;
-let Vx4 = 15;
-function parade(){
-	x = x + Vx;
-	x2 = x2 + Vx2;
-	x3 = x3 + Vx3;
-	x4 = x4 + Vx4;
+let x2 = 1;
+let x3 = 1;
+let x4 = 1;
+let speed=1
+let speed2=2
+let speed3=3
+let speed4=4
+let time=0;
+function animate(){
+time=time+1;
+	x = x + speed;
+	x2 = x2 + speed2;
+	x3 = x3 + speed3;
+	x4 = x4 + speed4;
 
 //circle
 ctx.fillStyle = "pink";
@@ -63,10 +65,9 @@ ctx.fill();
 
 
 
-requestAnimationFrame(parade);
+requestAnimationFrame(animate);
 }
-
-parade();
+	animate();
 
 			</script>
 	</body>
