@@ -1,0 +1,17 @@
+ <!DOCTYPE html>
+  1 <html lang="en">
+  2         <head>
+  3                 <title></title>
+  4 <style>
+  5 canvas{
+  6         border: black 1px solid;
+  7 }
+  8 </style>
+  9         </head>
+ 10         <body>
+ 11                 <h1>Canvas</h1>
+ 12                 <canvas id="canvas" width="1200" height="1200">
+ 13                         </canvas>
+ 14                         <script>
+ 15                                 const canvas = document.getElementById("canvas");
+ 16                                 const ctx = canvas.getContext("2d");
