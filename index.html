@@ -1,17 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>homepage</title>
 		<script src="js/validate.js"></script>
-		<style>
-                body{
-                        background-color:pink;
-                }
-                </style>
 		<link rel="icon" href="images/Apple.png" type="image/png">
-	</head>
-	<body>
-		<h1>Welcome to my homepage!</h1>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Grid Layout</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+margin: 20px;
+font-family: Arial, sans-serif;
+background-color: #f4f4f9;
+}
 
-	</body>
+.grid-container {
+display: grid;
+grid-template-columns: 1fr 2fr 1fr;
+grid-template-rows: auto 400px auto;
+gap: 15px; 
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.box {
+background-color: #B56453;
+border: 2px solid #ddd;
+border-radius: 8px;
+padding: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+color: #333;
+box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.top-box {
+grid-column: 1 / span 3; 
+background-color: #FFC7DA;
+}
+
+.left-box {
+grid-column: 1;
+background-color: #FFC7DA;
+}
+
+.middle-box {
+grid-column: 2;
+background-color: #FFC7DA;
+}
+
+.right-box {
+grid-column: 3;
+background-color: #FFC7DA;
+display: flex;
+flex-direction: column; 
+padding: 10px;
+}
+
+.bottom-box {
+grid-column: 1 / span 3;
+background-color: #FFC7DA;
+}
+
+.right-box img {
+max-width: 100%;
+max-height: 80%;
+object-fit: cover;
+border-radius: 4px;
+margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+<div class="box top-box">Welcome to My Homepage!</div>
+
+<div class="box left-box">
+<div class="link-menu">
+<h3>Projects</h3>
+<a href="https://erinyujiachen.github.io/projects/recipes/" target="_blank">Recipes</a>
+<br>
+<br>
+<a href="https://erinyujiachen.github.io/projects/portrait/" target="_blank">Self-Portrait</a>
+<br>
+<br>
+<a href="https://gracehoppercenter.github.io/ict/s26/courses/itd210/projects/game/Snack-Rat/" target="_blank">Game That High-key Doesn't work</a>
+<br>
+<br>
+<a href="https://erinyujiachen.github.io/projects/client/#" target="_blank">Client</a>
+<br>
+<br>
+<a href="https://erinyujiachen.github.io/projects/game/" target="_blank">Working game!</a>
+
+</div>
+</div>
+
+<div class="box middle-box">
+	<span>Hi! My name is Erin Chen. I'm currently a student at ACC, in my sophomore year. I am taking a web design class to learn how to build websites. I have two certifications, WDE and JSE.</span>
+	<br>
+<img src="images/a4.jpeg" height=70 width=70 alt="fat chud">
+
+</div>
+<div class="box right-box">
+<span>Me!</span>
+<img src="images/erin.jpg" alt="me">
+</div>
+
+<div class="box bottom-box">
+<a href="https://github.com/ErinYuJiaChen/ErinYuJiaChen.github.io/tree/main" target="_blank">Repository</a>
+</div>
+
+</div>
+<h1>Images!</h1>
+<img src="images/jelly.jpeg" class="quarter-width" alt="jerry">
+<img src="images/a1.jpeg" class="quarter-width" alt="me">
+<img src="images/a2.jpeg" class="quarter-width" alt="me n bro">
+<img src="images/a3.jpeg" class="quarter-width" alt="me">
+</body>
 </html>
